@@ -1,0 +1,20 @@
+[
+  {
+    "name": "MeltingPot",
+    "description": "Fondue restaurant chain offering heated pots of cheese, chocolate or broth for dipping & cooking.",
+    "food_type:": "fondue",
+    "pet_allowed:": "No"    
+  },
+  {
+    "name": "blank",
+    "description": "blank",
+    "food_type:": "blank",
+    "pet_allowed:": "blank"    
+  },
+  {
+    "name": "blank",
+    "description": "blank",
+    "food_type:": "blank",
+    "pet_allowed:": "No"    
+  }  
+]
