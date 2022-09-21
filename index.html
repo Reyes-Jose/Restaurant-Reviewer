@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Restaurant Reviews</title>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body class="main-container">
+
+	<!-- Title content -->
+	<section class="section">
+		<div class="has-text-centered">
+			<h1 class="title is-1">Restaurant Reviews</h1>
+		</div>
+	</section>
+
+	<!-- This section contains the search input form for the artist name -->
+
+    <!-- We need an input section (sequalize for the modal) that would create a field with html field for each restaurant -->
+
+	<!-- <section class="section level">
+		<form id="search-form" class="level-item">
+			<input id="search-input" class="input is-large default-color" type="text" placeholder="(Restaurant Name)">
+			<button type="submit" class="button is-dark is-large">Search</button>
+		</form>
+	</section> -->
+
+    <div>
+        <section id="restaurant-list" class="">
+            <h1> List of Restaurants:</h1>
+        </section>
+    </div>
+
+	<!-- Modal for warning that no input has been provided -->
+	<div class="modal" id="search-modal">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="box">
+				<!-- <p>Restaurant name was not provided! Please provide a restaurant name in the search box.</a> -->
+			</div>
+		</div>
+		<button class="modal-close is-large" aria-label="close" id="modal-close"></button>
+	</div>
+
+	<!-- Use a Container for search results from the Napster API call -->
+	<!-- Taken from example: https://codepen.io/karanrajpal14/pen/eKzbaw -->
+	<section class="section">
+		<div class="container" id="search-results">
+		<!-- Artist Cards will be appended to this container using JavaScript -->
+		</div>
+	</section>
+
+	<!-- Should the user choose, save the search information to a list, as
+			 well as local storage. Append the saved artists to this container. -->
+	<section class="section section-saved-artists" id="saved-searches-container">
+		<div class="has-text-centered">
+			<h2 class="title is-2">Saved Searches</h2>
+		</div>
+		
+		<div class="columns is-mobile">
+			<div class="container column is-one-third is-offset-one-third" id="saved-searches">
+				<!-- Saved artist cards will be appended to this container using JavaScript -->
+			</div>
+		</div>
+	</section>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./assets/js/script.js"></script>     
+    
+</body>
+</html>
