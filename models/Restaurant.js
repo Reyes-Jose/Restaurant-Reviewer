@@ -16,7 +16,7 @@ Restaurant.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     food_type: {
@@ -24,16 +24,16 @@ Restaurant.init(
       allowNull: false,
     },
     pet_allowed: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
       allowNull: false,
-    },
-    review_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'review',
-        key: 'id',
-      },
-    },
+    }
+    // review_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'review',
+    //     key: 'id',
+      // },
+    // },
   },
   {
     sequelize,

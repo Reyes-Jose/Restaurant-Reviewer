@@ -12,13 +12,20 @@ Review.init({
         autoIncrement: true,        
     },
     comment:{
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
     },
     date_created: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.NOW,
+        defaultValue: DataTypes.NOW,        
     },
+    restaurant_id: {
+          type: DataTypes.INTEGER,
+          references: {
+            model: 'restaurant',
+            key: 'id',
+          },
+        },
 },
 {
     sequelize,
