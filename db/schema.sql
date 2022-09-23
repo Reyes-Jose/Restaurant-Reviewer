@@ -1,5 +1,5 @@
 -- DROP DATABASE
-DROP DATABASE IF EXISTS restaurantReviews_db;
+DROP DATABASE IF EXISTS restreviews_db;
 
 -- CREATE DATABASE
-CREATE DATABASE restaurantReviews_db;
+CREATE DATABASE restreview_db;
