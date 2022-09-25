@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Restaurant, Review } = require('../../models');
+const { User, Restaurant, Review } = require('../../models');
 
 // GET all reviews
 router.get('/', async (_req, res) => {
