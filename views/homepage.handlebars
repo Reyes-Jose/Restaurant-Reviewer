@@ -1,24 +1,24 @@
 <!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+{{!-- This creates a Bulma card --}}
+{{!-- https://bulma.io/documentation/components/card/ --}}
+{{#each restaurants as |restaurant| }}
+<div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+    </figure>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">{{restaurant.name}}</p>
+        <p class="subtitle is-6">{{restaurant.food_type}}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      {{restaurant.description}}
+    </div>
   </div>
 </div>
 {{/each}}

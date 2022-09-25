@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Reviews</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="/public/css/style.css">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         {{!-- <span role="img" aria-label="money">💸</span> --}}
         <a href="/">Restaurant Reviews!</a>
       </h1>
-      <nav>
+      {{!-- <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
@@ -23,9 +24,9 @@
         {{else}}
         <a href="/login">login</a>
         {{/if}}
-      </nav>
+      </nav> --}}
     </header>
-    <main class="container container-fluid mt-5">
+    <main class="container">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
