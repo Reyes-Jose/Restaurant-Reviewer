@@ -1,5 +1,5 @@
 -- DROP DATABASE
-DROP DATABASE IF EXISTS restreviews_db;
+DROP DATABASE IF EXISTS restreview_db;
 
 -- CREATE DATABASE
 CREATE DATABASE restreview_db;
