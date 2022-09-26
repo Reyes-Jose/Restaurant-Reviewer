@@ -5,14 +5,15 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all Restaurants and JOIN with user data
-    const restaurantData = await Restaurant.findAll({
+    const restaurantData = await Restaurant.findAll(
     //   include: [
     //     {
     //       model: User,
     //       attributes: ['name'],
     //     },
     //   ],
-    });
+    );
+    console.log('restaurantData', restaurantData);
 
     // Serialize data so the template can read it
     const restaurants = restaurantData.map((restaurant) => restaurant.get({ plain: true }));
@@ -29,14 +30,14 @@ router.get('/', async (req, res) => {
 
 router.get('/restaurant/:id', async (req, res) => {
   try {
-    const restaurantData = await Restaurant.findByPk(req.params.id, {
+    const restaurantData = await Restaurant.findByPk(req.params.id
     //   include: [
     //     {
     //       model: User,
     //       attributes: ['name'],
     //     },
     //   ],
-    });
+    );
 
     const restaurant = restaurantData.get({ plain: true });
 

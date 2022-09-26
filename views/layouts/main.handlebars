@@ -12,11 +12,8 @@
 <body>
   <div class="">
     <header class="">
-      <h1>
-        {{!-- <span role="img" aria-label="money">💸</span> --}}
-        <a href="/">Restaurant Reviews!</a>
-      </h1>
-      {{!-- <nav>
+      <h1>Restaurant Reviews</h1>
+      <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
@@ -24,11 +21,12 @@
         {{else}}
         <a href="/login">login</a>
         {{/if}}
-      </nav> --}}
+      </nav>
     </header>
     <main class="container">
       <!-- Render the sub layout -->
       {{{ body }}}
+      {{log this}}
     </main>
     <footer>
       
