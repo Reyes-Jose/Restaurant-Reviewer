@@ -16,7 +16,7 @@
         {{!-- <span role="img" aria-label="money">💸</span> --}}
         <a href="/">Restaurant Reviews!</a>
       </h1>
-      {{!-- <nav>
+      <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
@@ -24,7 +24,7 @@
         {{else}}
         <a href="/login">login</a>
         {{/if}}
-      </nav> --}}
+      </nav>
     </header>
     <main class="container">
       <!-- Render the sub layout -->
@@ -37,7 +37,7 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/assets/js/logout.js"></script>
+  <script src="/js/logout.js"></script>
   {{/if}}
 </body>
 
