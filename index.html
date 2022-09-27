@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Restaurant Reviews</title>
+	<link rel="stylesheet" href="public\css\style.css" />
+	<!-- link to Bulma css -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+	<nav class="navbar is-white has-shadow">
+		<!-- logo -->
+		<div class="navbar-brand">
+		  <a class="navbar-item">
+			<img src="public\images\logo.jpg" style="max-height: 95px">
+		  </a>
+		</div>
+
+
+		<!-- nav bar -->
+		  <div class="navbar-end">
+
+			<a onClick="window.location.reload();" class="navbar-item">
+				Home
+			</a>
+		
+			  <a class="navbar-item" id="profile">
+				My Profile
+			  </a>
+ <!-- New Restaurant Reviews form button -->
+			<div class="modal" id="modal2">
+				<div class="modal-background" id="profile-Bg"></div>
+				<div class="modal-content has-background-white py-5 px-5">
+					<h3 class="title mb-6">New Restaurant Reviews!</h3>
+					<form>
+					  <div class="field">
+						<label class="label">Name</label>
+						<div class="control">
+						  <input class="input" type="text" placeholder="Name">
+						</div>
+					  </div>
+					  <div class="field">
+						<label class="label">Restaurant Name</label>
+						<div class="control">
+						  <input class="input" type="text" placeholder="Restaurant Name">
+						</div>
+					  </div>
+
+					  <div class="field">
+						<label class="label">Food Type?</label>
+						<div class="control">
+						  <input class="input" type="text" placeholder="Food Type?">
+						</div>
+					  </div>
+
+					  <div class="field">
+						<label class="label">Pet Allowed? YES/NO</label>
+						<div class="control">
+						  <input class="input" type="text" placeholder="Restaurant Name">
+						</div>
+					  </div>
+
+					  <div>
+						<label class="label">Write your FeedBack Here</label>
+						<textarea class="textarea" placeholder="Such as taste of food and drink..."></textarea>
+					  </div>
+
+					  <div class="mt-6 has-text-centered">
+						<button class="button is-warning">Submit Your Review</button>
+					  </div>
+					</form>
+				</div>
+			</div>
+
+			<a class="navbar-item" id="signup">
+				LOGIN/SIGNUP
+			</a>
+
+		  </div>
+	  </nav>
+
+
+
+	  <!-- Title of the website -->
+	<h1 class="is-size-3 has-text-centered has-text-weight-bold has-text-grey-dark py-4"> Restaurant Reviews </h1>
+
+	<!--review list-->
+<section class="section">
+	
+	<div class="container">
+
+	<div class="columns is-vcentered">
+	  <div class="column is-4">
+		<div class="card">
+			<div class="card-image">
+			  <figure class="image is-4by3">
+				<img src="https://bulma.io/images/placeholders/1280x960.png">
+			  </figure>
+			</div>
+			<div class="card-content">
+			  <div class="media">
+				<div class="media-content">
+				  <p class="title is-4 has-text-centered">Restaurant Names</p>
+				  <p class="subtitle is-5 has-text-weight-bold has-text-grey-dark mt-2">Food Type</p>
+				  <p class="subtitle is-5 has-text-weight-bold has-text-grey-dark">Pet allowed: Yes</p>
+				</div>
+			  </div>
+		  
+			  <div class="content-area container" >
+				<main id="main" class="site-main section has-text-centered">
+					<a class="button is-dark is-normal" id="button1">Click For Review</a>
+					<div class="modal" id="page-modal">
+						<div class="modal-background"></div>
+						<div class="modal-content">
+							<div class="section modal-wrap">
+							<h1 class="title">weeeeeeeeeeeeeee~~~~~~~~~~~~</h1>
+						</div>
+						</div>
+						<button class="modal-close is-large" aria-label="close"></button>
+					</div>
+
+				</main>
+			</div>
+			</div>
+		  </div>
+	  </div>
+
+<div class="column is-4">
+		<div class="card">
+			<div class="card-image">
+			  <figure class="image is-4by3">
+				<img src="https://bulma.io/images/placeholders/1280x960.png">
+			  </figure>
+			</div>
+			<div class="card-content">
+			  <div class="media">
+				<div class="media-content">
+				  <p class="title is-4 has-text-centered">Restaurant Names</p>
+				  <p class="subtitle is-5 has-text-weight-bold has-text-grey-dark mt-2">Food Type</p>
+				  <p class="subtitle is-5 has-text-weight-bold has-text-grey-dark">Pet allowed: Yes</p>
+				</div>
+			  </div>
+		  
+			  <div class="content-area container" >
+				<main id="main" class="site-main section has-text-centered">
+					<a class="button is-dark is-normal" id="button2">Click For Review</a>
+					<div class="modal" id="page-modal2">
+						<div class="modal-background"></div>
+						<div class="modal-content">
+							<div class="section modal-wrap">
+							<h1 class="title">weeeeeeeeeeeeeee~~~~~~~~~~~~</h1>
+						</div>
+						</div>
+						<button class="modal-close is-large" aria-label="close"></button>
+					</div>
+
+				</main>
+			</div>
+			</div>
+		  </div>
+	  </div>
+
+
+	  <div class="column is-4">
+		<div class="card">
+			<div class="card-image">
+			  <figure class="image is-4by3">
+				<img src="https://bulma.io/images/placeholders/1280x960.png">
+			  </figure>
+			</div>
+			<div class="card-content">
+			  <div class="media">
+				<div class="media-content">
+				  <p class="title is-4 has-text-centered">Restaurant Names</p>
+				  <p class="subtitle is-5 has-text-weight-bold has-text-grey-dark mt-2">Food Type: </p>
+				  <p class="subtitle is-5 has-text-weight-bold has-text-grey-dark">Pet allowed: Yes</p>
+				</div>
+			  </div>
+
+
+			  <div class="content-area container" >
+				<main id="main" class="site-main section has-text-centered">
+					<a class="button is-dark is-normal">Click For Review</a>
+					<div class="modal">
+						<div class="modal-background"></div>
+						<div class="modal-content">
+							<div class="section modal-wrap">
+							<h1 class="title">weeeeeeeeeeeeeee~~~~~~~~~~~~</h1>
+						</div>
+						</div>
+						<button class="modal-close is-large" aria-label="close"></button>
+					</div>
+
+				</main>
+			</div>
+
+
+			</div>
+		  </div>
+	  </div>
+	</div>
+  </div>
+</section>
+</div>
+
+
+<!-- Modal for signup and login -->
+<div class="modal" id="modal1">
+	<div class="modal-background" id="signup-background"></div>
+	<div class="modal-content has-background-white py-5 px-5">
+		<h3 class="title is-5 mb-6 px-3">LOG IN / SIGN UP </h3>
+		<div class="container">
+			<div class="columns is-vcentered">
+			  <div class="column is-6">
+				<form>
+					<div class="subtitle has-text-centered has-text-grey-dark has-text-weight-bold ">LOG IN</div>
+					<div class="field">
+					  <label class="label">Name</label>
+					  <div class="control">
+						<input class="input" type="text" placeholder="Name">
+					  </div>
+					</div>
+					<div class="field">
+					  <label class="label">Email</label>
+					  <div class="control">
+						<input class="input" type="email" placeholder="Email">
+					  </div>
+					</div>
+					<div class="field">
+						<label class="label">Password</label>
+						<div class="control">
+						  <input class="input" type="password" placeholder="Password">
+						</div>
+					  </div>
+
+					<div class=" has-text-centered">
+					  <button class="button is-warning">LOG IN</button>
+					</div>
+				  </form>
+			  </div>
+
+
+
+
+			  <div class="column is-6">
+				<form>
+					<div class="subtitle has-text-centered has-text-grey-dark has-text-weight-bold">SIGN UP</div>
+					<div class="field">
+					  <label class="label">Name</label>
+					  <div class="control">
+						<input class="input" type="text" placeholder="Name">
+					  </div>
+					</div>
+					<div class="field">
+					  <label class="label">Email</label>
+					  <div class="control">
+						<input class="input" type="email" placeholder="Email">
+					  </div>
+					</div>
+					<div class="field">
+						<label class="label">Password</label>
+						<div class="control">
+						  <input class="input" type="password" placeholder="Password">
+						</div>
+					  </div>
+
+					<div class=" has-text-centered">
+					  <button class="button is-warning">SIGN UP</button>
+					</div>
+				  </form>
+			  </div>
+			</div>
+		  </div>
+
+	</div>
+</div>
+
+
+  <script src="index.js"></script>
+
+    
+</body>
+</html>
