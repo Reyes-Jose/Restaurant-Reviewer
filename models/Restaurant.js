@@ -11,6 +11,10 @@ Restaurant.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
