@@ -55,14 +55,28 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Review }],
+      // include: [{ model: Review }],
     });
 
-    const user = userData.get({ plain: true });
+    // const reviewData = await Review.findAll({
+    //   where: {
+    //     user_id: req.session.user_id,
+    //   },
+    //   attributes: {
+    //     include: [{
+    //       model: Restaurant,
+    //     }]
+    //   }
+    // })
 
+    const user = userData.get({ plain: true });
+    // const reviews = reviewData.get({ plain: true });
+
+    console.log(user);
     res.render('profile', {
       ...user,
-      logged_in: true
+      // reviews,
+      logged_in: true //need to fix later to see where the user is logged in otherwise anyone can get into the info
     });
   } catch (err) {
     res.status(500).json(err);
