@@ -1,24 +1,42 @@
 <!-- Loop over each object in the projects array -->
-{{!-- This creates a Bulma card --}}
-{{!-- https://bulma.io/documentation/components/card/ --}}
-{{#each restaurants as |restaurant| }}
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">{{restaurant.name}}</p>
-        <p class="subtitle is-6">{{restaurant.food_type}}</p>
+{{! This creates a Bulma card }}
+{{! https://bulma.io/documentation/components/card/ }}
+
+<div class="columns column-grid-3">
+  {{#each restaurants as |restaurant|}}
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-1by1">
+            <img
+              src="https://bulma.io/images/placeholders/1280x960.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">{{restaurant.name}}</p>
+              <p class="subtitle is-6">{{restaurant.food_type}}</p>
+            </div>
+          </div>
+
+          <div class="content">
+            {{restaurant.description}}
+          </div>
+
+          <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <h1 class="title">Reviews</h1>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+
+        </div>
       </div>
     </div>
-
-    <div class="content">
-      {{restaurant.description}}
-    </div>
-  </div>
+  {{/each}}
 </div>
-{{/each}}
