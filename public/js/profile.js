@@ -1,9 +1,9 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
-  
+ 
     const restaurant_id = document.querySelector('#project-name').value.trim();
     const comment = document.querySelector('#review').value.trim();
-  
+ 
     if (restaurant_id && comment) {
       const response = await fetch(`/api/reviews`, {
         method: 'POST',
@@ -12,7 +12,7 @@ const newFormHandler = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-  
+      console.log('profile response', response);
       if (response.ok) {
         document.location.replace('/profile');
       } else {

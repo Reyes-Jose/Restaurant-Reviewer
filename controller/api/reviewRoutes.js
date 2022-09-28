@@ -3,11 +3,13 @@ const { User, Restaurant, Review } = require('../../models');
 
 // GET all reviews
 router.get('/', async (_req, res) => {
+  console.log('server /reviews...');
   try {
     const review = await Review.findAll({
       include: [{ model: Restaurant }],
     });
-    res.status(200).json(review);
+    const reviewData = review.map((rev) => rev.get({ plain: true }));
+    res.status(200).json(reviewData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -33,13 +35,14 @@ router.get('/:id', async (req, res) => {
 
 // CREATE a review
 router.post('/', async (req, res) => {
-  console.log(req.body);
+  console.log('req.body', req.body);
   try {
     const review = await Review.create({
       restaurant_id: parseInt(req.body.restaurant_id),
       comment: req.body.comment,
       user_id: req.session.user_id,
     });
+    console.log('review', review);
     res.status(200).json(review);
   } catch (err) {
     res.status(400).json(err);
