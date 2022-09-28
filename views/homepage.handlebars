@@ -2,16 +2,17 @@
 {{! This creates a Bulma card }}
 {{! https://bulma.io/documentation/components/card/ }}
 
-{{log restaurants}}
+{{!-- {{log restaurants}} --}}
 
 <div class="columns column-grid-3">
   {{#each restaurants as |restaurant|}}
+  {{ log restaurant }}
     <div class="column">
       <div class="card">
         <div class="card-image">
           <figure class="image is-1by1">
             <img
-              src="/images/{{restaurant.filename}}"
+              src="/images/{{restaurant.dataValues.filename}}"
               alt="{{restaurant.description}}"
             />
           </figure>
@@ -20,8 +21,8 @@
         <div class="card-content">
           <div class="media">
             <div class="media-content">
-              <p class="title is-4">{{restaurant.name}}</p>
-              <p class="subtitle is-6">{{restaurant.food_type}}</p>
+              <p class="title is-4">{{restaurant.dataValues.name}}</p>
+              <p class="subtitle is-6">{{restaurant.dataValues.food_type}}</p>
             </div>
           </div>
 
@@ -49,7 +50,7 @@
             
           </div> --}}
 
-          <div id="restaurant-{{restaurant.id}}" class="modal">
+          <div id="restaurant-{{restaurant.dataValues.id}}" class="modal">
             <div class="modal-background"></div>
 
             <div class="modal-content">
@@ -62,7 +63,7 @@
             <button class="modal-close is-large" aria-label="close"></button>
           </div>
 
-          <button class="js-modal-trigger rev-btn" data-target="restaurant-{{restaurant.id}}">
+          <button class="js-modal-trigger rev-btn" data-target="restaurant-{{restaurant.dataValues.id}}">
             Open JS example modal
           </button>
 
