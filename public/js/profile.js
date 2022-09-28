@@ -1,16 +1,13 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#project-name').value.trim();
-    const foodtype = document.querySelector('#food-type').value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
-    const pets = document.querySelector('#pets').value.trim();
-    const review= document.querySelector('#review').value.trim();
+    const restaurant_id = document.querySelector('#project-name').value.trim();
+    const comment = document.querySelector('#review').value.trim();
   
-    if (name && foodtype && description && pets && review) {
-      const response = await fetch(`/api/review`, {
+    if (restaurant_id && comment) {
+      const response = await fetch(`/api/reviews`, {
         method: 'POST',
-        body: JSON.stringify({ name, foodtype, description, pets, review }),
+        body: JSON.stringify({ restaurant_id, comment }),
         headers: {
           'Content-Type': 'application/json',
         },
