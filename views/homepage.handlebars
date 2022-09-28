@@ -13,7 +13,7 @@
           <figure class="image is-1by1">
             <img
               src="/images/{{restaurant.dataValues.filename}}"
-              alt="{{restaurant.description}}"
+              alt="{{restaurant.dataValues.description}}"
             />
           </figure>
         </div>
@@ -26,37 +26,12 @@
             </div>
           </div>
 
-          {{!-- <div class="content">
-            {{restaurant.description}}
-          </div> --}}
-
-          {{!-- Add HTML for the Modal --}}
-          {{!-- <div class="content-area container has-text-centered">
-              <a class="button is-dark is-normal rev-btn">Reviews</a>
-              
-              <div class="modal">
-                <div class="modal-background"></div>
-                <div class="modal-content">
-                  <div class="section modal-wrap">
-                    <h1 class="title">weeeeeeeeeeeeeee~~~~~~~~~~~~</h1>
-                    {{!-- TODO: Reviews go here --}}
-                  </div>
-                </div>
-                <button
-                  class="modal-close is-large"
-                  aria-label="close"
-                ></button>
-              </div>
-            
-          </div> --}}
-
           <div id="restaurant-{{restaurant.dataValues.id}}" class="modal">
             <div class="modal-background"></div>
 
             <div class="modal-content">
               <div class="box">
                 <p>Modal JS example</p>
-                <!-- Your content -->
               </div>
             </div>
 
@@ -66,14 +41,6 @@
           <button class="js-modal-trigger rev-btn" data-target="restaurant-{{restaurant.dataValues.id}}">
             Open JS example modal
           </button>
-
-          {{! <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-              <h1 class="title">Reviews</h1>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-          </div> }}
 
         </div>
       </div>
