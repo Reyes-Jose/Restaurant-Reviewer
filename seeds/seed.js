@@ -13,16 +13,18 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const review of reviewData) {
-    await Review.create({
-      ...review,
-      restaurant_id: restaurant[Math.floor(Math.random() * restaurant.length)].id,
-    });
-  }
+ 
   const user = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
+
+  for (const review of reviewData) {
+    await Review.create({
+      ...review,
+      // restaurant_id: restaurant[Math.floor(Math.random() * restaurant.length)].id,
+    });
+  }
 
 
   process.exit(0);

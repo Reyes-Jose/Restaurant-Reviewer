@@ -19,21 +19,21 @@ Review.init({
         allowNull: false,
         defaultValue: DataTypes.NOW,        
     },
-    user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'user',
-          key: 'id',
-        },
-      },
+//     user_id: {
+//         type: DataTypes.INTEGER,
+//         references: {
+//           model: 'user',
+//           key: 'id',
+//         },
+//       },
     
-restaurant_id: {
-   type: DataTypes.INTEGER,
-   references: {
-   model: 'restaurant',
-    key: 'id',
-   },
-  },
+// restaurant_id: {
+//    type: DataTypes.INTEGER,
+//    references: {
+//    model: 'restaurant',
+//     key: 'id',
+//    },
+//   },
 },
 {
     sequelize,
