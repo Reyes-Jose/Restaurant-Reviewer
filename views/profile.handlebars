@@ -9,21 +9,15 @@
     <h3>Create a New Restaurant Review:</h3>
 
     <form class="form new-project-form">
-      <div class="form-group">
+      <div class="form-group"> 
+        {{!-- add a dropdown menu of the restaurants --}}
         <label for="project-name">Restaurant name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="food-type">Food Type:</label>
-        <textarea class="form-input" id="food-type" name="food-type"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="pets">Pets Allowed?</label>
-        <textarea class="form-input" id="pets" name="pets"></textarea>
+        <select "form-input" type="text" id="project-name" name="project-name">
+        <option value="1">The MeltingPot</option>
+        <option value="2">The Barcode Bar And Grill</option>
+        <option value="3">TacoBoutIt</option>
+        <option value="4">Grill Lab</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="review">Review:</label>
@@ -35,17 +29,18 @@
     </form>
   </div>
 
-  {{#if projects.length}}
+  
   <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each projects as |project|}}
+    <h3>Current Reviews:</h3>
+    
+{{#if reviews.length}}
+    {{#each reviews as |review|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4>{{review.comment}}</h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
