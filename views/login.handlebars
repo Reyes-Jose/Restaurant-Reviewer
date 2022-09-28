@@ -1,42 +1,76 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+{{! bulma rendering fields }}
+<div class="columns">
+  <form class="form login-form column box">
+    <div class="field">
+      <p class="card-header-title">
+        Login
+      </p>
+      <label class="email-login">Email:</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          id="email-login"
+          placeholder="e.g. alex@example.com"
+        />
+      </div>
+    </div>
+    <div class="field">
+      <label class="password-login">password:</label>
+      <div class="control">
+        <input
+          class="input"
+          type="password"
+          id="password-login"
+          placeholder="*********"
+        />
+      </div>
+    </div>
+    <div class="control">
+      <button class="button is-primary" type="submit">Login</button>
+    </div>
+  </form>
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+  <form class="form signup-form column box">
+    <div class="field">
+      <p class="card-header-title">
+        Signup
+      </p>
+      <label class="name-signup">Name:</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          id="name-signup"
+          placeholder="John Doe"
+        />
       </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+    </div>
+    <div class="field">
+      <label class="email-signup">Email:</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          id="email-signup"
+          placeholder="e.g. alex@example.com"
+        />
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
+    </div>
+    <div class="field">
+      <label class="password-signup">password:</label>
+      <div class="control">
+        <input
+          class="input"
+          type="password"
+          id="password-signup"
+          placeholder="*********"
+        />
       </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
+    </div>
+    <div class="control">
+      <button class="button is-primary" type="submit">Signup</button>
+    </div>
+  </form>
+  <script src="/js/login.js"></script>
 </div>
-
-<script src="/js/login.js"></script>
