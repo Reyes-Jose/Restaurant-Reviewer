@@ -1,24 +1,96 @@
 <!-- Loop over each object in the projects array -->
-{{!-- This creates a Bulma card --}}
-{{!-- https://bulma.io/documentation/components/card/ --}}
-{{#each restaurants as |restaurant| }}
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="/images/{{restaurant.filename}}" alt="{{restaurant.description}}">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">{{restaurant.name}}</p>
-        <p class="subtitle is-6">{{restaurant.food_type}}</p>
+{{! This creates a Bulma card }}
+{{! https://bulma.io/documentation/components/card/ }}
+
+{{!-- {{log restaurants}} --}}
+
+<div class="columns column-grid-3">
+  {{#each restaurants as |restaurant|}}
+    {{log restaurant}}
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-1by1">
+            <img
+              src="/images/{{restaurant.dataValues.filename}}"
+              alt="{{restaurant.dataValues.description}}"
+            />
+          </figure>
+        </div>
+
+        {{! Display the Restaurant Name and Food Type in the main Card }}
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">{{restaurant.dataValues.name}}</p>
+              <p class="subtitle is-6">{{restaurant.dataValues.food_type}}</p>
+            </div>
+          </div>
+
+          {{! Create the Modal content for the Reviews }}
+          <div
+            id="restaurant-reviews-{{restaurant.dataValues.id}}"
+            class="modal"
+          >
+            <div class="modal-background"></div>
+
+            <div class="modal-content">
+              <div class="box">
+                <div class="box content">
+                  <h1>User Reviews</h1>
+                </div>
+                {{#each reviews as |review|}}
+                  <div class="box content is-medium">
+                    <p class="">"{{review.dataValues.comment}}" - (TODO: insert
+                      User.name)</p>
+                  </div>
+                {{/each}}
+              </div>
+            </div>
+            <button class="modal-close" aria-label="close"></button>
+          </div>
+
+          {{! Create a Modal for the Restaurant Info }}
+          <div id="restaurant-info-{{restaurant.dataValues.id}}" class="modal">
+            <div class="modal-background"></div>
+
+            <div class="modal-content">
+              <div class="box">
+                <div class="box content">
+                  <h1>{{restaurant.dataValues.name}}</h1>
+                </div>
+                <div class="box content is-medium">
+                  <p class="">{{restaurant.dataValues.description}}</p>
+                </div>
+                <div class="box content is-medium">
+                  <p class="">Pets OK? {{restaurant.dataValues.pet_allowed}}</p>
+                </div>
+              </div>
+            </div>
+            <button class="modal-close is-dark" aria-label="close"></button>
+          </div>
+
+          {{! Group the buttons together }}
+          <div class="buttons is-centered is-dark">
+            {{! Create the button used for the User Reviews }}
+            <button
+              class="js-modal-trigger"
+              data-target="restaurant-reviews-{{restaurant.dataValues.id}}"
+            >
+              User Reviews
+            </button>
+
+            {{! Create the button used for the Restaurant Info }}
+            <button
+              class="js-modal-trigger"
+              data-target="restaurant-info-{{restaurant.dataValues.id}}"
+            >
+              Restaurant Info
+            </button>
+          </div>
+
+        </div>
       </div>
     </div>
-
-    <div class="content">
-      {{restaurant.description}}
-    </div>
-  </div>
+  {{/each}}
 </div>
-{{/each}}

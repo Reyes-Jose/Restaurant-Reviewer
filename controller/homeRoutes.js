@@ -2,30 +2,22 @@ const router = require('express').Router();
 const { User, Restaurant, Review } = require('../models');
 const withAuth = require('../utils/auth');
 
+
 router.get('/', async (req, res) => {
   try {
-    // Get all Restaurants and JOIN with user data
-    const restaurantData = await Restaurant.findAll({
-    //   include: [
-    //     {
-    //       model: User,
-    //       attributes: ['name'],
-    //     },
-    //   ],
+    const restaurants = await Restaurant.findAll({
+      include: [{ model: Review}],
     });
-
-    // Serialize data so the template can read it
-    const restaurants = restaurantData.map((restaurant) => restaurant.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
     res.render('homepage', { 
       restaurants, 
       logged_in: req.session.logged_in 
     });
+    // res.status(200).json(restaurant);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 router.get('/restaurant/:id', async (req, res) => {
   try {
