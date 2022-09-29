@@ -1,11 +1,11 @@
-const router = require('express').Router();
-const { User, Restaurant, Review } = require('../../models');
+const router = require("express").Router();
+const { User, Restaurant, Review } = require("../../models");
 
-// GET all restaurant
-router.get('/', async (_req, res) => {
+// GET all restaurants and their reviews
+router.get("/", async (_req, res) => {
   try {
     const restaurant = await Restaurant.findAll({
-      include: [{ model: Review}],
+      include: [{ model: Review }],
     });
     res.status(200).json(restaurant);
   } catch (err) {
@@ -14,14 +14,14 @@ router.get('/', async (_req, res) => {
 });
 
 // GET a single restaurant by ID
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const restaurant = await Restaurant.findByPk(req.params.id, {
-      include: [{ model: Review}],
+      include: [{ model: Review }],
     });
 
     if (!restaurant) {
-      res.status(404).json({ message: 'No restaurant found with this id!' });
+      res.status(404).json({ message: "No restaurant found with this id!" });
       return;
     }
 
@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // CREATE a restaurant
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const restaurant = await Restaurant.create(req.body);
     res.status(200).json(restaurant);
@@ -41,17 +41,17 @@ router.post('/', async (req, res) => {
   }
 });
 
-// DELETE a restaurant
-router.delete('/:id', async (req, res) => {
+// DELETE a restaurant based on the restaurant ID
+router.delete("/:id", async (req, res) => {
   try {
     const restaurant = await Restaurant.destroy({
       where: {
-        id: req.params.id
-      }
+        id: req.params.id,
+      },
     });
 
     if (!restaurant) {
-      res.status(404).json({ message: 'No restaurant found with this id!' });
+      res.status(404).json({ message: "No restaurant found with this id!" });
       return;
     }
 

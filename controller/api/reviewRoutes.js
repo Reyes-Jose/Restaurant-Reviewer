@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Restaurant, Review } = require('../../models');
 
-// GET all reviews
+// GET all reviews and their associated Restaurant
 router.get('/', async (_req, res) => {
   console.log('server /reviews...');
   try {
