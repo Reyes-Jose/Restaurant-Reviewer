@@ -1,51 +1,48 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Restaurant Review:</h3>
-
-    <form class="form new-project-form">
-      <div class="form-group"> 
-        {{!-- add a dropdown menu of the restaurants --}}
-        <label for="project-name">Restaurant name:</label>
-        <select "form-input" type="text" id="project-name" name="project-name">
-        {{#each restaurants as |restaurant|}}
-        <option value="{{restaurant.dataValues.id}}">{{restaurant.dataValues.name}}</option>
-        {{/each}}
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="review">Review:</label>
-        <textarea class="form-input" id="review" name="review"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  
-  <div class="col-md-6 project-list">
-    <h3>Current Reviews:</h3>
-
-{{#if reviews.length}}
-    {{#each reviews as |review|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{review.comment}}</h4>
-        <p>{{review.restaurant.name}}</p>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
-      </div>
+<div class="columns">
+  <div class="colum">
+    <p class="card-header-title">
+      Welcome,
+      {{name}}!
+    </p>
+    <h1 class="title is-4">Create a new restaurant review:</h1>
+    <div class="new-project-form">
+    <label for="project-name">Restaurant name:</label>
+          <select "form-input" type="text" id="project-name" name="project-name">
+          {{#each restaurants as |restaurant|}}
+          <option value="{{restaurant.dataValues.id}}">{{restaurant.dataValues.name}}</option>
+          {{/each}}
+          </select>
+          <div class="column">
+            <textarea class="textarea" id="review" placeholder="Enter your comment here"></textarea>
+          </div>
+          <div class="control">
+      <button type="submit" class="button is-primary">Create</button>
     </div>
-    {{/each}}
+
+    </div>
+
+    <div class="column project-list">
+      <p class="card-header-title">Current Reviews:</p>
+    {{#if reviews.length}}
+      {{#each reviews as |review|}}
+      <div class="card column">
+      <div class="card-content">
+      <div class="content column">
+      <h4>{{review.comment}}</h4>
+      <p>{{review.restaurant.name}}</p>
+      </div>
+      <div class="control">
+      <button class="button is-primary" data-id="{{review.id}}">Delete</button>
+    </div>
+      </div>
+      {{/each}}
+      </div>
+
+      
+    </div>
+    {{/if}}
+
   </div>
-  {{/if}}
 </div>
 
 <script src="/js/profile.js"></script>
