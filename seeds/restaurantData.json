@@ -8,9 +8,9 @@
   },
   {
     "name": "The Barcode Bar And Grill",
-    "description": "this is a restaurant that focuses on futuristic cuisine that will bring peoples food and taste pallets to a new level of perfection. we are proud to be one of the finest restaurants in the city of st louis. there is always something going on in our restaurant and we will give you the best service that you have ever had. please tell your friends about our restaurants. Our menu is not limited to the typical american cuisine. the menu consists of a wide variety of dishes. for more information about the restaurant, please give us a call.",
+    "description": "This is a restaurant that focuses on futuristic cuisine that will bring peoples food and taste pallets to a new level of perfection. we are proud to be one of the finest restaurants in the city of st louis. there is always something going on in our restaurant and we will give you the best service that you have ever had. please tell your friends about our restaurants. Our menu is not limited to the typical american cuisine. the menu consists of a wide variety of dishes. for more information about the restaurant, please give us a call.",
     "food_type": "American",
-    "pet_allowed": "yes",  
+    "pet_allowed": "Yes",  
     "filename":  "bar.png"    
   },
   {
@@ -24,7 +24,7 @@
     "name": "Grill Lab",
     "description": "We grill everything you can think of.",
     "food_type": "Grilling",
-    "pet_allowed": "yes",  
+    "pet_allowed": "Yes",  
     "filename":  "grill.png"
   }  
 ]
