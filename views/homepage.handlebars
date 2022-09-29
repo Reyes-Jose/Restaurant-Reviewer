@@ -18,7 +18,7 @@
           </figure>
         </div>
 
-        {{!-- Display the Restaurant Name and Food Type in the main Card --}}
+        {{! Display the Restaurant Name and Food Type in the main Card }}
         <div class="card-content">
           <div class="media">
             <div class="media-content">
@@ -27,8 +27,11 @@
             </div>
           </div>
 
-          {{!-- Create the Modal content for the Reviews --}}
-          <div id="restaurant-reviews-{{restaurant.dataValues.id}}" class="modal">
+          {{! Create the Modal content for the Reviews }}
+          <div
+            id="restaurant-reviews-{{restaurant.dataValues.id}}"
+            class="modal"
+          >
             <div class="modal-background"></div>
 
             <div class="modal-content">
@@ -44,18 +47,10 @@
                 {{/each}}
               </div>
             </div>
-            <button class="modal-close is-large" aria-label="close"></button>
+            <button class="modal-close" aria-label="close"></button>
           </div>
 
-          {{!-- Create the button used for the User Reviews --}}
-          <button
-            class="js-modal-trigger is-dark is-normal rev-btn"
-            data-target="restaurant-reviews-{{restaurant.dataValues.id}}"
-          >
-            User Reviews
-          </button>
-
-          {{!-- Create a Modal for the Restaurant Info --}}
+          {{! Create a Modal for the Restaurant Info }}
           <div id="restaurant-info-{{restaurant.dataValues.id}}" class="modal">
             <div class="modal-background"></div>
 
@@ -64,21 +59,35 @@
                 <div class="box content">
                   <h1>{{restaurant.dataValues.name}}</h1>
                 </div>
-                  <div class="box content is-medium">
-                    <p class="">{{restaurant.dataValues.description}}</p>
-                  </div>
+                <div class="box content is-medium">
+                  <p class="">{{restaurant.dataValues.description}}</p>
+                </div>
+                <div class="box content is-medium">
+                  <p class="">Pets OK? {{restaurant.dataValues.pet_allowed}}</p>
+                </div>
               </div>
             </div>
-            <button class="modal-close is-large is-dark" aria-label="close"></button>
+            <button class="modal-close is-dark" aria-label="close"></button>
           </div>
 
-          {{!-- Create the button used for the Restaurant Info --}}
-          <button
-            class="js-modal-trigger is-dark"
-            data-target="restaurant-info-{{restaurant.dataValues.id}}"
-          >
-            Restaurant Info
-          </button>
+          {{! Group the buttons together }}
+          <div class="buttons is-centered is-dark">
+            {{! Create the button used for the User Reviews }}
+            <button
+              class="js-modal-trigger"
+              data-target="restaurant-reviews-{{restaurant.dataValues.id}}"
+            >
+              User Reviews
+            </button>
+
+            {{! Create the button used for the Restaurant Info }}
+            <button
+              class="js-modal-trigger"
+              data-target="restaurant-info-{{restaurant.dataValues.id}}"
+            >
+              Restaurant Info
+            </button>
+          </div>
 
         </div>
       </div>
