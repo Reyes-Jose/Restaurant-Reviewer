@@ -6,7 +6,7 @@
 
 <div class="columns column-grid-3">
   {{#each restaurants as |restaurant|}}
-  {{ log restaurant }}
+    {{log restaurant}}
     <div class="column">
       <div class="card">
         <div class="card-image">
@@ -18,6 +18,7 @@
           </figure>
         </div>
 
+        {{!-- Display the Restaurant Name and Food Type in the main Card --}}
         <div class="card-content">
           <div class="media">
             <div class="media-content">
@@ -26,20 +27,57 @@
             </div>
           </div>
 
-          <div id="restaurant-{{restaurant.dataValues.id}}" class="modal">
+          {{!-- Create the Modal content for the Reviews --}}
+          <div id="restaurant-reviews-{{restaurant.dataValues.id}}" class="modal">
             <div class="modal-background"></div>
 
             <div class="modal-content">
               <div class="box">
-                <p>Modal JS example</p>
+                <div class="box content">
+                  <h1>User Reviews</h1>
+                </div>
+                {{#each reviews as |review|}}
+                  <div class="box content is-medium">
+                    <p class="">"{{review.dataValues.comment}}" - (TODO: insert
+                      User.name)</p>
+                  </div>
+                {{/each}}
               </div>
             </div>
-
             <button class="modal-close is-large" aria-label="close"></button>
           </div>
 
-          <button class="js-modal-trigger rev-btn" data-target="restaurant-{{restaurant.dataValues.id}}">
+          {{!-- Create the button used for the User Reviews --}}
+          <button
+            class="js-modal-trigger is-dark is-normal rev-btn"
+            data-target="restaurant-reviews-{{restaurant.dataValues.id}}"
+          >
             User Reviews
+          </button>
+
+          {{!-- Create a Modal for the Restaurant Info --}}
+          <div id="restaurant-info-{{restaurant.dataValues.id}}" class="modal">
+            <div class="modal-background"></div>
+
+            <div class="modal-content">
+              <div class="box">
+                <div class="box content">
+                  <h1>{{restaurant.dataValues.name}}</h1>
+                </div>
+                  <div class="box content is-medium">
+                    <p class="">{{restaurant.dataValues.description}}</p>
+                  </div>
+              </div>
+            </div>
+            <button class="modal-close is-large is-dark" aria-label="close"></button>
+          </div>
+
+          {{!-- Create the button used for the Restaurant Info --}}
+          <button
+            class="js-modal-trigger is-dark"
+            data-target="restaurant-info-{{restaurant.dataValues.id}}"
+          >
+            Restaurant Info
           </button>
 
         </div>
