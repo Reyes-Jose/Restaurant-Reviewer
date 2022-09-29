@@ -4,11 +4,16 @@
 
 {{!-- {{log restaurants}} --}}
 
-<div class="columns column-grid-3">
+<div class="columns is-multiline">
   {{#each restaurants as |restaurant|}}
-    {{log restaurant}}
-    <div class="column">
-      <div class="card">
+    
+    {{!-- Break each card into a column that spans 1/3 of the page --}}
+    <div class="column is-one-third">
+      
+      {{!-- Create the restaurant Card container --}}
+      <div class="card card-background">
+        
+        {{!-- Pass the Restaurant image to the Card --}}
         <div class="card-image">
           <figure class="image is-1by1">
             <img
@@ -27,20 +32,39 @@
             </div>
           </div>
 
+          {{! Group the buttons together }}
+          <div class="card-footer">
+            {{! Create the button used for the User Reviews }}
+            <a
+              class="js-modal-trigger card-footer-item"
+              data-target="restaurant-reviews-{{restaurant.dataValues.id}}"
+            >
+              User Reviews
+            </a>
+
+            {{! Create the button used for the Restaurant Info }}
+            <a
+              class="js-modal-trigger card-footer-item"
+              data-target="restaurant-info-{{restaurant.dataValues.id}}"
+            >
+              Restaurant Info
+            </a>
+          </div>
+
           {{! Create the Modal content for the Reviews }}
           <div
             id="restaurant-reviews-{{restaurant.dataValues.id}}"
             class="modal"
           >
             <div class="modal-background"></div>
-
             <div class="modal-content">
               <div class="box">
                 <div class="box content">
-                  <h1>User Reviews</h1>
+                  <h1>{{restaurant.dataValues.name}}</h1>
+                  <h3>User Reviews</h3>
                 </div>
                 {{#each reviews as |review|}}
-                  <div class="box content is-medium">
+                  <div class="box content is-medium shaded-background">
                     <p class="">"{{review.dataValues.comment}}" - (TODO: insert
                       User.name)</p>
                   </div>
@@ -59,35 +83,18 @@
                 <div class="box content">
                   <h1>{{restaurant.dataValues.name}}</h1>
                 </div>
-                <div class="box content is-medium">
+                <div class="box content is-medium shaded-background">
                   <p class="">{{restaurant.dataValues.description}}</p>
                 </div>
-                <div class="box content is-medium">
-                  <p class="">Pets OK? {{restaurant.dataValues.pet_allowed}}</p>
+                <div class="box content is-medium shaded-background">
+                  <p class="">Pets OK? - <b>{{restaurant.dataValues.pet_allowed}}</b></p>
                 </div>
               </div>
             </div>
             <button class="modal-close is-dark" aria-label="close"></button>
           </div>
 
-          {{! Group the buttons together }}
-          <div class="buttons is-centered is-dark">
-            {{! Create the button used for the User Reviews }}
-            <button
-              class="js-modal-trigger"
-              data-target="restaurant-reviews-{{restaurant.dataValues.id}}"
-            >
-              User Reviews
-            </button>
-
-            {{! Create the button used for the Restaurant Info }}
-            <button
-              class="js-modal-trigger"
-              data-target="restaurant-info-{{restaurant.dataValues.id}}"
-            >
-              Restaurant Info
-            </button>
-          </div>
+          {{!-- TODO: Card Footer --}}
 
         </div>
       </div>

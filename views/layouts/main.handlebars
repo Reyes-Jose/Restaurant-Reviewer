@@ -1,44 +1,55 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Reviews</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Reviews</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body>
-  <div class="">
-    <header class="">
-      <h1>
-        <a href="/">Restaurant Reviews!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
+  <body>
+    <section class="box">
+    <nav class="navbar is-white has-shadow">
+      <!-- logo -->
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="assets/logo.jpg" style="max-height: 95px" />
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <a class="navbar-item" href="/">Restaurant Reviews!</a>
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+          <a class="navbar-item" href="/profile">profile</a>
+          |
+          <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+          <a class="navbar-item" href="/login">Login</a>
         {{/if}}
-      </nav>
-    </header>
-    <main class="container">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-  <script src="/js/buttons.js"></script>
-</body>
+      </div>
+    </nav>
+    </section>
+
+    <main class="container">
+      <section class="box">
+      <!-- Render the sub layout -->
+      {{{body}}}
+      </section>
+    </main>
+    
+    <footer>
+    </footer>
+
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+    <script src="/js/buttons.js"></script>
+  </body>
 
 </html>

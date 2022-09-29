@@ -1,4 +1,16 @@
-.column-grid-3 {
+/* .columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+} */
+
+.card {
+    height: 100%;
+}
+
+.shaded-background {
+    background-color:rgb(226, 241, 255);
+}
+
+.card-background {
+    background-color:rgb(241, 245, 245);
 }
