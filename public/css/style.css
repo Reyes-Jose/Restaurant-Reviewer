@@ -1,16 +1,13 @@
-/* .columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-} */
-
 .card {
     height: 100%;
 }
 
+/* Use a shaded background for blocks in the Cards */
 .shaded-background {
     background-color:rgb(226, 241, 255);
 }
 
+/* Define a custom background color for the Cards */
 .card-background {
     background-color:rgb(241, 245, 245);
 }

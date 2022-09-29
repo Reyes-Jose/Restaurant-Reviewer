@@ -1,3 +1,5 @@
+// login code was taken from the UCB Bootcamp repo
+//  https://ucb.bootcampcontent.com/UCB-Coding-Bootcamp/UCB-VIRT-FSF-PT-05-2022-U-LOLC/-/blob/main/14-MVC/01-Activities/28-Stu_Mini-Project/Main/public/js/login.js
 const loginFormHandler = async (event) => {
     event.preventDefault();
   
