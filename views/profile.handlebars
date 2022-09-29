@@ -1,46 +1,55 @@
 <div class="columns">
-  <div class="colum">
-    <p class="card-header-title">
-      Welcome,
-      {{name}}!
-    </p>
+  <div class="column">
+    <p class="card-header-title">Welcome, {{name}}!</p>
     <h1 class="title is-4">Create a new restaurant review:</h1>
     <div class="new-project-form">
-    <label for="project-name">Restaurant name:</label>
-          <select "form-input" type="text" id="project-name" name="project-name">
-          {{#each restaurants as |restaurant|}}
-          <option value="{{restaurant.dataValues.id}}">{{restaurant.dataValues.name}}</option>
-          {{/each}}
-          </select>
-          <div class="column">
-            <textarea class="textarea" id="review" placeholder="Enter your comment here"></textarea>
-          </div>
-          <div class="control">
-      <button type="submit" class="button is-primary">Create</button>
-    </div>
+      <label for="project-name">Restaurant name:</label>
+      <select
+        class="form-input"
+        type="text"
+        id="project-name"
+        name="project-name"
+      >
+        {{#each restaurants as |restaurant|}}
+          <option
+            value="{{restaurant.dataValues.id}}"
+          >{{restaurant.dataValues.name}}</option>
+        {{/each}}
+      </select>
+      <div class="column">
+        <textarea
+          class="textarea"
+          id="review"
+          placeholder="Enter your comment here"
+        ></textarea>
+      </div>
+      <div class="control">
+        <button type="submit" class="button is-primary">Create</button>
+      </div>
 
     </div>
 
     <div class="column project-list">
       <p class="card-header-title">Current Reviews:</p>
-    {{#if reviews.length}}
-      {{#each reviews as |review|}}
-      <div class="card column">
-      <div class="card-content">
-      <div class="content column">
-      <h4>{{review.comment}}</h4>
-      <p>{{review.restaurant.name}}</p>
-      </div>
-      <div class="control">
-      <button class="button is-primary" data-id="{{review.id}}">Delete</button>
+      {{#if reviews.length}}
+        {{#each reviews as |review|}}
+          <div class="card column">
+            <div class="card-content">
+              <div class="content column">
+                <h4>{{review.comment}}</h4>
+                <p>{{review.restaurant.name}}</p>
+              </div>
+              <div class="control">
+                <button
+                  class="button is-primary"
+                  data-id="{{review.id}}"
+                >Delete</button>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      {{/if}}
     </div>
-      </div>
-      {{/each}}
-      </div>
-
-      
-    </div>
-    {{/if}}
 
   </div>
 </div>
