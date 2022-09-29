@@ -1,4 +1,8 @@
-.column-grid-3 {
+/* .columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+} */
+
+.card {
+    height: 100%;
 }

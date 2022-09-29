@@ -4,10 +4,10 @@
 
 {{!-- {{log restaurants}} --}}
 
-<div class="columns column-grid-3">
+<div class="columns is-multiline">
   {{#each restaurants as |restaurant|}}
     {{log restaurant}}
-    <div class="column">
+    <div class="column is-one-third">
       <div class="card">
         <div class="card-image">
           <figure class="image is-1by1">
@@ -37,7 +37,8 @@
             <div class="modal-content">
               <div class="box">
                 <div class="box content">
-                  <h1>User Reviews</h1>
+                  <h1>{{restaurant.dataValues.name}}</h1>
+                  <h3>User Reviews</h3>
                 </div>
                 {{#each reviews as |review|}}
                   <div class="box content is-medium">
@@ -69,6 +70,8 @@
             </div>
             <button class="modal-close is-dark" aria-label="close"></button>
           </div>
+
+          {{!-- TODO: Card Footer --}}
 
           {{! Group the buttons together }}
           <div class="buttons is-centered is-dark">
