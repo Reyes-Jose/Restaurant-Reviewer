@@ -60,12 +60,15 @@ router.get('/profile', withAuth, async (req, res) => {
     //     }]
     //   }
     // })
-
+    
     const user = userData.get({ plain: true });
     // const reviews = reviewData.get({ plain: true });
 
+    const restaurants = await Restaurant.findAll();
+
     res.render('profile', {
       ...user,
+      restaurants,
       // reviews,
       logged_in: true //need to fix later to see where the user is logged in otherwise anyone can get into the info
     });
