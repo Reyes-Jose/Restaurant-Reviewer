@@ -3,7 +3,7 @@
 {{! https://bulma.io/documentation/components/card/ }}
 
 {{!-- {{log restaurants}} --}}
-
+{{log userData}}
 <div class="columns is-multiline">
   {{#each restaurants as |restaurant|}}
     
@@ -65,8 +65,8 @@
                 </div>
                 {{#each reviews as |review|}}
                   <div class="box content is-medium shaded-background">
-                    <p class="">"{{review.dataValues.comment}}" - (TODO: insert
-                      User.name)</p>
+
+                    <p class="">"{{review.dataValues.comment}}" - {{review.dataValues.user.dataValues.name}}.</p>
                   </div>
                 {{/each}}
               </div>
