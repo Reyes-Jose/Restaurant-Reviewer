@@ -15,6 +15,11 @@ As a user, I want to add reviews with my experience of those restaurants. Those 
 
 Node.js and Express.js to create a RESTful API. Handlebars.js as the template engine and display. MySQL and the Sequelize ORM for the database. Incorporation of GET and POST routes for retrieving and adding new data. Usage of Bulma for styling. 
 
+## Application Links
+
+- [Deployed App on Heroku](https://restreviews-app.herokuapp.com/)
+- [GitHub Repository](https://github.com/Reyes-Jose/project-2)
+
 ## Screenshot
 
 ![Screenshot of App](./assets/example.png)
@@ -27,41 +32,48 @@ First, clone the repo. Then:
 
 - Install the Node dependencies:
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
+
+- Copy the `dotenv` example file (`.env.example`) to a new `.env` file
+  - (The `.env` file is included in the `.gitignore`, so no need to worry about committing your local credentials)
+
+  ```bash
+  cp .env.example .env
+  ```
+
+- Populate the `.env` file with your MySQL credentials:
+
+    ```toml
+    DB_NAME='restreview_db'
+    DB_USER='<username_goes_here>'
+    DB_PASSWORD='<password_goes_here>'
+    ```
 
 - Source the MySQl schema:
 
-```bash
-mysql -u root -p
-```
+    ```bash
+    mysql -u root -p
+    ```
 
-```sql
-SOURCE ./db/schema.sql
-exit
-```
+    ```sql
+    SOURCE ./db/schema.sql;
+    exit;
+    ```
 
 - Seed the database locally:
 
-```bash
-npm run seed
-```
+    ```bash
+    npm run seed
+    ```
 
 - Then start the App:
 
-```bash
-npm start
-```
+    ```bash
+    npm start
+    ```
 
 ## Contributors
 
-Made by Kristina Litunovskaia, Maryam Muska, Ryan Whitmore, Jose Reyes, and William Huang
-
-## Mock Up of App
-
-
-## Application Links
-
-- [Deployed App on Heroku](https://restreviews-app.herokuapp.com/)
-- [GitHub Repository](https://github.com/Reyes-Jose/project-2)
+Made by Kristina Litunovskaia, Maryam Muska, Ryan Whitmore, Jose Reyes, and William Huang.
