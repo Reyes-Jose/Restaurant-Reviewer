@@ -15,6 +15,10 @@ As a user, I want to add reviews with my experience of those restaurants. Those 
 
 Node.js and Express.js to create a RESTful API. Handlebars.js as the template engine and display. MySQL and the Sequelize ORM for the database. Incorporation of GET and POST routes for retrieving and adding new data. Usage of Bulma for styling. 
 
+## Screenshot
+
+![Screenshot of App](./assets/example.png)
+
 ## Running the App Locally
 
 For development, the app can be hosted locally.
