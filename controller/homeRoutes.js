@@ -6,10 +6,13 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const restaurants = await Restaurant.findAll({
-      include: [{ model: Review}],
+      include: [{ model: Review,
+      include: [{ model: User}]}],
     });
+    const userData = await User.findAll();    
     res.render('homepage', { 
       restaurants, 
+      userData,
       logged_in: req.session.logged_in 
     });
   } catch (err) {

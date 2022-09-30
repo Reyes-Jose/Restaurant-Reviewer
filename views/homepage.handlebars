@@ -1,6 +1,7 @@
 <!-- Loop over each object in the restaurants array -->
 {{! This creates a Bulma card }}
 {{! https://bulma.io/documentation/components/card/ }}
+
 {{!-- Structure borrowed from: https://ucb.bootcampcontent.com/UCB-Coding-Bootcamp/UCB-VIRT-FSF-PT-05-2022-U-LOLC/-/blob/main/14-MVC/01-Activities/28-Stu_Mini-Project/Main/views/homepage.handlebars --}}
 
 <div class="columns is-multiline">
@@ -64,8 +65,8 @@
                 </div>
                 {{#each reviews as |review|}}
                   <div class="box content is-medium shaded-background">
-                    <p class="">"{{review.dataValues.comment}}" - (TODO: insert
-                      User.name)</p>
+
+                    <p class="">"{{review.dataValues.comment}}" - {{review.dataValues.user.dataValues.name}}.</p>
                   </div>
                 {{/each}}
               </div>
