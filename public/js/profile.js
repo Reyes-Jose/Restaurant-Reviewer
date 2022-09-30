@@ -1,3 +1,6 @@
+// profile code was taken directly from the UCB Bootcamp Gitlab Repo
+// and includes some modifications for the updated Routes
+//   https://ucb.bootcampcontent.com/UCB-Coding-Bootcamp/UCB-VIRT-FSF-PT-05-2022-U-LOLC/-/blob/main/14-MVC/01-Activities/28-Stu_Mini-Project/Main/public/js/profile.js
 const newFormHandler = async (event) => {
     event.preventDefault();
  

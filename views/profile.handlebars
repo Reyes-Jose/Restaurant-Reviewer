@@ -1,9 +1,10 @@
+{{!-- Structure borrowed from: https://ucb.bootcampcontent.com/UCB-Coding-Bootcamp/UCB-VIRT-FSF-PT-05-2022-U-LOLC/-/blob/main/14-MVC/01-Activities/28-Stu_Mini-Project/Main/views/profile.handlebars --}}
 <div class="columns">
   <div class="column">
     <p class="card-header-title">Welcome, {{name}}!</p>
-    <h1 class="title is-4">Create a new restaurant review:</h1>
+    <h2 class="title is-4">Create a new restaurant review:</h2>
     <div class="new-project-form">
-      <label for="project-name">Restaurant name:</label>
+      <strong for="project-name">Restaurant name:</strong>
       <select
         class="form-input"
         type="text"
@@ -33,9 +34,9 @@
       <p class="card-header-title">Current Reviews:</p>
       {{#if reviews.length}}
         {{#each reviews as |review|}}
-          <div class="card column">
-            <div class="card-content">
-              <div class="content column">
+          <div>
+            <div class="card-content box content is-medium shaded-background">
+              <div class="content ">
                 <h4>{{review.comment}}</h4>
                 <p>{{review.restaurant.name}}</p>
               </div>

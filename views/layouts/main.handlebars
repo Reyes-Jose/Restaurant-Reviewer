@@ -1,3 +1,4 @@
+{{!-- Structure borrowed from: https://ucb.bootcampcontent.com/UCB-Coding-Bootcamp/UCB-VIRT-FSF-PT-05-2022-U-LOLC/-/blob/main/14-MVC/01-Activities/28-Stu_Mini-Project/Main/views/homepage.handlebars --}}
 <html lang="en">
 
   <head>
@@ -13,35 +14,34 @@
 
   <body>
     <section class="box">
-    <nav class="navbar is-white has-shadow">
-      <!-- logo -->
-      <div class="navbar-brand">
-        <a class="navbar-item">
-          <img src="assets/logo.jpg" style="max-height: 95px" />
-        </a>
-      </div>
+      <nav class="navbar is-white has-shadow">
+        <!-- logo -->
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="assets/logo.jpg" style="max-height: 95px" />
+          </a>
+        </div>
 
-      <div class="navbar-end">
-        <a class="navbar-item" href="/">Restaurant Reviews!</a>
-        {{#if logged_in}}
-          <a class="navbar-item" href="/profile">profile</a>
-          |
-          <button class="no-button" id="logout">Logout</button>
-        {{else}}
-          <a class="navbar-item" href="/login">Login</a>
-        {{/if}}
+        <div class="navbar-end">
+          <a class="navbar-item" href="/">Restaurant Reviews!</a>
+          {{#if logged_in}}
+            <a class="navbar-item" href="/profile">profile</a>
+            <button class="no-button" id="logout">Logout</button>
+          {{else}}
+            <a class="navbar-item" href="/login">Login</a>
+          {{/if}}
 
-      </div>
-    </nav>
+        </div>
+      </nav>
     </section>
 
     <main class="container">
       <section class="box">
-      <!-- Render the sub layout -->
-      {{{body}}}
+        <!-- Render the sub layout -->
+        {{{body}}}
       </section>
     </main>
-    
+
     <footer>
     </footer>
 

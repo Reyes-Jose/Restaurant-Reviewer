@@ -1,3 +1,6 @@
+// Event listeners for the Modal buttons.
+// Code was copied directly from the Bulma website:
+//   https://bulma.io/documentation/components/modal/#javascript-implementation-example
 const buttons = document.querySelectorAll(`.rev-btn`);
 
 console.log("buttons", buttons);

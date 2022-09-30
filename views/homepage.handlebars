@@ -1,19 +1,19 @@
-<!-- Loop over each object in the projects array -->
+<!-- Loop over each object in the restaurants array -->
 {{! This creates a Bulma card }}
 {{! https://bulma.io/documentation/components/card/ }}
 
-{{!-- {{log restaurants}} --}}
-{{log userData}}
+{{!-- Structure borrowed from: https://ucb.bootcampcontent.com/UCB-Coding-Bootcamp/UCB-VIRT-FSF-PT-05-2022-U-LOLC/-/blob/main/14-MVC/01-Activities/28-Stu_Mini-Project/Main/views/homepage.handlebars --}}
+
 <div class="columns is-multiline">
   {{#each restaurants as |restaurant|}}
-    
-    {{!-- Break each card into a column that spans 1/3 of the page --}}
+
+    {{! Break each card into a column that spans 1/3 of the page }}
     <div class="column is-one-third">
-      
-      {{!-- Create the restaurant Card container --}}
+
+      {{! Create the restaurant Card container }}
       <div class="card card-background">
-        
-        {{!-- Pass the Restaurant image to the Card --}}
+
+        {{! Pass the Restaurant image to the Card }}
         <div class="card-image">
           <figure class="image is-1by1">
             <img
@@ -87,14 +87,13 @@
                   <p class="">{{restaurant.dataValues.description}}</p>
                 </div>
                 <div class="box content is-medium shaded-background">
-                  <p class="">Pets OK? - <b>{{restaurant.dataValues.pet_allowed}}</b></p>
+                  <p class="">Pets OK? -
+                    <b>{{restaurant.dataValues.pet_allowed}}</b></p>
                 </div>
               </div>
             </div>
             <button class="modal-close is-dark" aria-label="close"></button>
           </div>
-
-          {{!-- TODO: Card Footer --}}
 
         </div>
       </div>
